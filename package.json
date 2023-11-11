@@ -19,9 +19,11 @@
     "@sentry/node": "^7.54.0",
     "@sentry/tracing": "^7.54.0",
     "@types/dotenv-flow": "^3.2.0",
+    "@types/qrcode-terminal": "^0.12.2",
     "dotenv": "^16.1.4",
     "dotenv-flow": "^3.2.0",
     "puppeteer": "^19.11.1",
+    "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.21.0",
     "winston": "^3.9.0",
     "winston-sentry-log": "^1.0.26"

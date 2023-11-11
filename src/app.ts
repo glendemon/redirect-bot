@@ -2,6 +2,7 @@ import WAWebJS, { Client, LocalAuth } from 'whatsapp-web.js'
 import winston, { format } from 'winston'
 import Sentry from 'winston-sentry-log'
 import config from './config'
+import qrcode from 'qrcode-terminal'
 
 const options = {
   config: {
@@ -62,7 +63,7 @@ try {
   const client = getWAClient('bot_session')
   client.on('qr', (qr) => {
     // Generate and scan this code with your phone
-    console.log('QR RECEIVED', qr)
+    qrcode.generate(qr, {small: true});
   })
 
   client.on('ready', () => {
@@ -71,7 +72,7 @@ try {
 
   client.on('message', msg => {
     if (msg.body == '!ping') {
-      msg.reply('pong')
+      msg.forward('chatId')
     }
   })
 
