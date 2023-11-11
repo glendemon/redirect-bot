@@ -1,5 +1,5 @@
-import WAWebJS, {Client, LocalAuth} from 'whatsapp-web.js'
-import winston, {format} from 'winston'
+import WAWebJS, { Client, LocalAuth } from 'whatsapp-web.js'
+import winston, { format } from 'winston'
 import Sentry from 'winston-sentry-log'
 import config from './config'
 
@@ -59,23 +59,23 @@ const getWAClient = (sessionId: string): WAWebJS.Client => {
 
 try {
   logger.info('Server started.')
-  const client = getWAClient('bot_session');
+  const client = getWAClient('bot_session')
   client.on('qr', (qr) => {
     // Generate and scan this code with your phone
-    console.log('QR RECEIVED', qr);
-  });
+    console.log('QR RECEIVED', qr)
+  })
 
   client.on('ready', () => {
-    console.log('Client is ready!');
-  });
+    console.log('Client is ready!')
+  })
 
   client.on('message', msg => {
     if (msg.body == '!ping') {
-      msg.reply('pong');
+      msg.reply('pong')
     }
-  });
+  })
 
-  client.initialize();
+  client.initialize()
 } catch (e) {
   logger.error(e)
 }
