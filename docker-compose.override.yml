@@ -1,0 +1,12 @@
+version: '3.8'
+
+# Development environment override
+services:
+  puppeteer:
+    build:
+      target: app_dev
+    volumes:
+      - .:/usr/src/app
+#      - /usr/src/app/node_modules
+    ports:
+      - '4001:4001'

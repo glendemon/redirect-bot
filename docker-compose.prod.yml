@@ -1,0 +1,19 @@
+version: '3.8'
+
+# Production environment override
+services:
+  puppeteer:
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: ${HOST_NAME}
+      LETSENCRYPT_HOST: ${HOST_NAME}
+      LETSENCRYPT_EMAIL: mail@vdemin.com
+    networks:
+      - default
+      - gateenv
+
+networks:
+  default:
+  gateenv:
+    external:
+      name: gate

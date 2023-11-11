@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+  puppeteer:
+    pull_policy: never
+    build:
+      context: .
+      target: app_prod
+    volumes:
+      - .wwebjs_auth:/usr/src/app/.wwebjs_auth

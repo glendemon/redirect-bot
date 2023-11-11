@@ -1,0 +1,10 @@
+/.idea
+# dependencies
+/node_modules
+/.wwebjs_auth
+/.wwebjs_cache
+/dist
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
