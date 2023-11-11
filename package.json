@@ -11,7 +11,7 @@
     ]
   },
   "scripts": {
-    "start": "node",
+    "start": "tsc && node dist/app.js",
     "lint": "tsc && eslint . && standard && ts-standard",
     "test": "jest"
   },
