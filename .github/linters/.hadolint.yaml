@@ -1,0 +1,2 @@
+ignored:
+  - DL3018 # Ignore using version in apk add
